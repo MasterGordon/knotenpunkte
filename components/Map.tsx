@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Icon, IconButton, useDisclosure, VStack } from "@chakra-ui/react";
 import { MdAdd, MdMenu, MdRemove } from "react-icons/md";
-import NavDrawer from "./components/Drawer";
+import NavDrawer from "./Drawer";
 
 const Map: React.FC = () => {
   const { isOpen, onClose, onOpen } = useDisclosure({ defaultIsOpen: true });

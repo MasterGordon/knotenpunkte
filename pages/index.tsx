@@ -3,10 +3,8 @@ import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import { XMLParser } from "fast-xml-parser";
-import { Box, Icon, IconButton, VStack } from "@chakra-ui/react";
-import { MdAdd, MdMenu, MdPlusOne, MdRemove } from "react-icons/md";
 
-const Map = dynamic(() => import("../Map"), { ssr: false });
+const Map = dynamic(() => import("../components/Map"), { ssr: false });
 
 const parser = new XMLParser({
   attributeNamePrefix: "@_",

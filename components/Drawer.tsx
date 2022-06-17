@@ -30,7 +30,10 @@ import {
   MdDelete,
   MdFlag,
   MdLocationPin,
+  MdPrint,
   MdRemove,
+  MdSave,
+  MdShare,
 } from "react-icons/md";
 
 interface DrawerProps {
@@ -86,7 +89,13 @@ const NavDrawer: React.FC<DrawerProps> = (props) => {
                   setItems((items) => [e.target.value, ...items.slice(1)]);
                 }}
               />
-              <IconButton aria-label="Aktuellen Standort wählen">
+              <IconButton
+                aria-label="Aktuellen Standort wählen"
+                onClick={() => {
+                  items[0] = "42 Krefeld";
+                  setItems([...items]);
+                }}
+              >
                 <Icon as={MdLocationPin} />
               </IconButton>
               <Box />
@@ -204,6 +213,17 @@ const NavDrawer: React.FC<DrawerProps> = (props) => {
               ~{Math.floor((totalKm / 15) * 10) / 10}h
             </Flex>
           </VStack>
+          <HStack spacing={4} justifyContent="center">
+            <IconButton aria-label="Teilen">
+              <Icon as={MdShare} />
+            </IconButton>
+            <IconButton aria-label="Speichern">
+              <Icon as={MdSave} />
+            </IconButton>
+            <IconButton aria-label="Drucken">
+              <Icon as={MdPrint} />
+            </IconButton>
+          </HStack>
         </DrawerBody>
       </DrawerContent>
     </Drawer>
